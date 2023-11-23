@@ -4,3 +4,9 @@ export enum SelectedPage { // note: enums doesnt exist in build time but only in
     Classes = "classes",
     ContactUs = "contactus",
   }
+
+  export type BenefitType = {
+    icon: JSX.Element;
+    title: string;
+    description: string;
+  };
