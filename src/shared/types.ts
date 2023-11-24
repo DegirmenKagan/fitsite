@@ -10,3 +10,9 @@ export enum SelectedPage { // note: enums doesnt exist in build time but only in
     title: string;
     description: string;
   };
+
+  export type ClassType = {
+    name: string;
+    description?: string;
+    image: string;
+  };
