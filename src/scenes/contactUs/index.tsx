@@ -58,7 +58,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
       <div className="mt-10 justify-between gap-8 md:flex">
         {/* Form */}
         <motion.div
-          className="mt-10 basis-3/5 md:mt-8"
+          className="mt-10 basis-3/5 md:mt-0"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -78,7 +78,10 @@ const ContactUs = ({ setSelectedPage }: Props) => {
               className={inputStyles}
               type="text"
               placeholder="Name"
-              {...register("name", { required: true, maxLength: 100 })} // register an input with validation rules applied to it (required and max length of 100)
+              {...register("name", {
+                required: true,
+                maxLength: 100,
+              })} // register an input with validation rules applied to it (required and max length of 100)
             />
             {errors.name && (
               <p className="mt-1 text-primary-500">
