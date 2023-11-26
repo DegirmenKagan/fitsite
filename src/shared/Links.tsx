@@ -1,15 +1,16 @@
 import Link from "@/scenes/navbar/Link";
 type Props = {
   _className?: string;
+  simple?: boolean;
 };
 
-const Links = ({ _className }: Props) => {
+const Links = ({ _className, simple }: Props) => {
   return (
     <div className={`${_className} flex flex-col`}>
-      <Link page={"Home"} />
-      <Link page={"Benefits"} />
-      <Link page={"Classes"} />
-      <Link page={"Contact Us"} />
+      <Link simple={simple} page={"Home"} />
+      <Link simple={simple} page={"Benefits"} />
+      <Link simple={simple} page={"Classes"} />
+      <Link simple={simple} page={"Contact Us"} />
     </div>
   );
 };

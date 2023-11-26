@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
         <div className="basis 1/4 mt-16 md:mt-0">
           <h4 className="font-bold">Links</h4>
-          <Links _className="my-5" />
+          <Links simple _className="my-5" />
         </div>
         <div className="basis 1/4 mt-16 md:mt-0">
           <h4 className="font-bold">Contact Us</h4>

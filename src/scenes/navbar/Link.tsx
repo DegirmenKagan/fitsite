@@ -4,16 +4,17 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import PageContext from "@/shared/pageContext";
 type Props = {
   page: string;
+  simple?: boolean;
 };
 
-const Link = ({ page }: Props) => {
+const Link = ({ page, simple }: Props) => {
   const { selectedPage, setSelectedPage } = useContext(PageContext);
 
   const lowerCasePage = page.toLowerCase().replace(/ /g, "") as SelectedPage; // replace removes spaces
   return (
     <AnchorLink
       className={`${
-        selectedPage === lowerCasePage ? "text-primary-500" : ""
+        !simple && selectedPage === lowerCasePage ? "text-primary-500" : ""
       } transition duration-500 hover:text-primary-300`}
       href={`#${lowerCasePage}`}
       onClick={() => setSelectedPage(lowerCasePage)}
