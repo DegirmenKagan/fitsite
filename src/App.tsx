@@ -16,8 +16,10 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
-        setIsTopOfPage(window.scrollY === 0); // Check if user is at top of page (on page load)
+        setIsTopOfPage(true); // Check if user is at top of page (on page load)
         setSelectedPage(SelectedPage.Home); // Set selected page to home
+      } else {
+        setIsTopOfPage(false);
       }
     };
 
