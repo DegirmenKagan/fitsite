@@ -1,18 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo from "@/assets/Logo.png";
 import Link from "./Link";
-import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import ActionButton from "@/shared/ActionButton";
+import PageContext from "@/shared/pageContext";
 
 type Props = {
   isTopOfPage: boolean;
-  selectedPage: SelectedPage;
-  setSelectedPage: (page: SelectedPage) => void;
 };
 
-const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ isTopOfPage }: Props) => {
+  const { selectedPage, setSelectedPage } = useContext(PageContext);
   const flexBetween = "flex justify-between items-center";
   const [isMenuToggled, setMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");

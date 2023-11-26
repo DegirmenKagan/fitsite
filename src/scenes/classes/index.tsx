@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext } from "react";
 import { SelectedPage, ClassType } from "@/shared/types";
 import image1 from "@/assets/image1.png";
 import image2 from "@/assets/image2.png";
@@ -9,6 +9,7 @@ import image6 from "@/assets/image6.png";
 import { motion } from "framer-motion";
 import HText from "@/shared/HText";
 import Class from "./Class";
+import PageContext from "@/shared/pageContext";
 
 const classes: Array<ClassType> = [
   {
@@ -49,11 +50,11 @@ const classes: Array<ClassType> = [
   },
 ];
 
-type Props = {
-  setSelectedPage: (page: SelectedPage) => void;
-};
+type Props = {};
 
-const Classes = ({ setSelectedPage }: Props) => {
+const Classes = ({}: Props) => {
+  const { setSelectedPage } = useContext(PageContext);
+
   return (
     <section id="classes" className="w-full bg-primary-100 py-40">
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Classes)}>

@@ -8,12 +8,12 @@ import SponsorForbes from "@/assets/SponsorForbes.png";
 import SponsorFortune from "@/assets/SponsorFortune.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import PageContext from "@/shared/pageContext";
+type Props = {};
 
-type Props = {
-  setSelectedPage: (page: SelectedPage) => void;
-};
-
-const Home = ({ setSelectedPage }: Props) => {
+const Home = ({}: Props) => {
+  const { setSelectedPage } = useContext(PageContext);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   return (

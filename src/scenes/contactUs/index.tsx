@@ -3,11 +3,13 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
 import HText from "@/shared/HText";
-type Props = {
-  setSelectedPage: (page: SelectedPage) => void;
-};
+import { useContext } from "react";
+import PageContext from "@/shared/pageContext";
+type Props = {};
 
-const ContactUs = ({ setSelectedPage }: Props) => {
+const ContactUs = ({}: Props) => {
+  const { setSelectedPage } = useContext(PageContext);
+
   const inputStyles = `mb-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
 
   const {

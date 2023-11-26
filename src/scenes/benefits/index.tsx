@@ -9,6 +9,8 @@ import HText from "@/shared/HText";
 import Benefit from "./Benefit";
 import ActionButton from "@/shared/ActionButton";
 import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
+import { useContext } from "react";
+import PageContext from "@/shared/pageContext";
 
 const benefits: Array<BenefitType> = [
   {
@@ -42,11 +44,11 @@ const container = {
   },
 };
 
-type Props = {
-  setSelectedPage: (page: SelectedPage) => void;
-};
+type Props = {};
 
-const Benefits = ({ setSelectedPage }: Props) => {
+const Benefits = ({}: Props) => {
+  const { setSelectedPage } = useContext(PageContext);
+
   return (
     <section id="benefits" className="mx-auto min-h-full w-5/6 py-20 ">
       <motion.div

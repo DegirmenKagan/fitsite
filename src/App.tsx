@@ -6,6 +6,7 @@ import Benefits from "@/scenes/benefits";
 import Classes from "@/scenes/classes";
 import ContactUs from "@/scenes/contactUs";
 import Footer from "@/scenes/footer";
+import PageContext from "@/shared/pageContext";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -30,16 +31,14 @@ function App() {
 
   return (
     <div className="app bg-gray-20">
-      <Navbar
-        isTopOfPage={isTopOfPage}
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-      />
-      <Home setSelectedPage={setSelectedPage} />
-      <Benefits setSelectedPage={setSelectedPage} />
-      <Classes setSelectedPage={setSelectedPage} />
-      <ContactUs setSelectedPage={setSelectedPage} />
-      <Footer />
+      <PageContext.Provider value={{ selectedPage, setSelectedPage }}>
+        <Navbar isTopOfPage={isTopOfPage} />
+        <Home />
+        <Benefits />
+        <Classes />
+        <ContactUs />
+        <Footer />
+      </PageContext.Provider>
     </div>
   );
 }
